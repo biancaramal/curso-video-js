@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background: #000;
+            color: #FFF;
+            font: normal 16pt 'Poppins';
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p name="txt">Aprendendo a usar <strong>DOM</strong> em Javascript.</p>
+    
+    <div id="msg">Clique em mim</div>
+   
+   <script>
+        var corpo = window.document.body
+        //SELECIONANDO POR TAG/MARCA
+        var p1 = window.document.getElementsByTagName('p')[0]
+        p1.style.background = 'purple'
+        
+        //SELECIONANDO POR NOME
+        var c = window.document.getElementsByName('txt')[0]
+        c.style.background = 'green'
+
+        //SELECIONANDO POR ID
+        var d = window.document.getElementById('msg')
+        d.style.background = 'red'
+        //ALTERANDO O TEXTO COM DOM PELA VARIÁVEL
+        d.innerText = 'Estou aguardando'
+        //ALTERANDO O TEXTO COM DOM EM UMA LINHA SÓ
+        window.document.getElementById('msg').innerText = 'Ola'
+
+        //SELECIONANDO POR CLASSNAME
+        var e = document.getElementsByClassName('title')[0]
+        e.style.color = 'pink'
+
+        //POR SELETOR DÁ PRA SELECIONAR TUDO DA FORMA QUE QUER
+        var f = document.querySelectorAll('h1.title')
+        f.innerText = 'Estou sendo alterado por seletor'
+    </script>
+</body>
+</html>

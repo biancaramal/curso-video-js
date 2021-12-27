@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        #area{
+            font: normal 20pt 'Poppins';
+            background: green;
+            color: #FFF;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- COM HTML E JAVASCRIPT-->
+    <!-- <div id="area" onClick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div> -->
+
+    <!-- SÓ COM JAVASCRIPT FICA ASSIM -->
+    <div id="area" onClick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+
+    <script>
+        var a = window.document.getElementById('area');
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar(){
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+        function entrar(){
+            a.innerText = 'Entrou!'
+        }
+        function sair(){
+            a.innerText = 'Saiu!'
+            a.style.background = 'green'
+        }
+        // function mover(){
+        //     document.querySelector('div#area').innerText = 'Moveu!'
+        // }
+        // function segurar(){
+        //     document.querySelector('div#area').innerText = 'Segurou!'
+        // }
+        // function soltar(){
+        //     document.querySelector('div#area').innerText = 'Soltou!'
+        // }
+    </script>
+</body>
+</html>
